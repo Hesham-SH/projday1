@@ -1,0 +1,43 @@
+<p>registration works!</p>
+<input type="text" placeholder="Name" [(ngModel)]="studName"/>
+<input type="text" placeholder="Age"  [(ngModel)]="studAge"/>
+
+<div style="color: red; text-align: center;" *ngIf="!studName; else validName">
+    
+</div>
+
+<ng-template #validName>
+    <div *ngIf="!nameValidation(); else isValidAge" style="color: red; text-align: center;">
+      Name Must Consist of 4 Characters at Least!
+    </div>
+  </ng-template>
+
+  <ng-template #isValidAge>
+    <div *ngIf="studAge" style="color: greenyellow; text-align: center;">
+      Valid Entry
+    </div>
+</ng-template>
+  
+
+<div style="color: red; text-align: center;" *ngIf="!studAge; else validRecord">
+    
+  </div>
+  <ng-template #validRecord>
+    <div *ngIf="!ageValidation(); else validInput" style="color: red; text-align: center;">
+      Age Must Consist of Digits between 0-9
+    </div>
+  </ng-template>
+
+  <ng-template #validInput>
+    <div *ngIf="+studAge <= 30 ; else isValid" style="color: red; text-align: center;">
+      Age must be between 1 and  31
+    </div>
+</ng-template>
+
+<ng-template #isValid>
+    <div *ngIf="studAge" style="color: greenyellow; text-align: center;">
+      Valid Entry
+    </div>
+</ng-template>
+
+  <input type="button" value="Insert Student" (click)="setData()" />

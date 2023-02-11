@@ -1,0 +1,35 @@
+<!-- <h1>App Component</h1> -->
+<!-- <div style="border: 1px solid black;">
+  <app-first></app-first>
+</div>
+<app-second></app-second> -->
+<!-- <app-second></app-second> -->
+
+
+<!-- <app-first></app-first> -->
+
+
+<!--Day 3-->
+<!--Table-->
+<!--Validation-->
+<!-- <app-all-in-one></app-all-in-one> -->
+
+<!--Component Interaction-->
+
+<div>
+  <h1>App Component [Parent]</h1>
+  <p>Data: {{DataFromParent}}</p>
+  <div>
+    <!-- [Parent ===> Child] ===> [attr]="parent"-->
+    <app-home [DataFromLoginToHome]="DataFromLogin" [DataFromParentToHome]="DataFromParent"></app-home>
+  </div>
+  <div>
+    <!-- [Child ==> Parent] ===> (event)="fun(data)" -->
+    <app-login (myEvent)="GetData($event)"></app-login>
+  </div>
+  <p>Data: {{DataFromLogin}}</p>
+</div>
+
+
+<!-- <input type="text" placeholder="Data" [value]="DataFromParent" /> -->
+<!-- <input type="text" placeholder="First Name" (input)="GetData($event)" /> -->

@@ -1,0 +1,44 @@
+<h1>This Is First Component</h1>
+
+<!-- <app-second></app-second> -->
+
+<p>4+4 = {{4+4}}</p>
+<!-- <p>{{4+4}}</p> -->
+
+<p>name</p>
+<!--Binding-->
+<p>{{name}}</p>
+<input type="text" value="name"/>
+<input type="text" value="{{name}}"/>
+
+<!--One Way Binding [From Ts ==> Html]-->
+<input type="text" [value]="name"/>
+
+<input type="button" value="Change" (click)="chg()" />
+
+<!-- <img src="https://images.unsplash.com/photo-1675655595764-460e3ac82aa8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" />
+
+<img src="../../../assets/Images/1.jpg" />
+
+<img src="assets/Images/2.jpg" /> -->
+
+<br>
+<img [src]="imgPath" />
+
+<!--TWo Way Binding-->
+<!--1) ourSelf-->
+<br><br><br><br>
+<input type="text" placeholder="First Name" [value]="firstName" (input)="getData($event)" />
+<p>Data: {{firstName}}</p>
+<br><br><br><br>
+
+
+<!--2) Angular-->
+
+<!--Exernal Module [ FormsModule ] ==> app.module.ts ===> imports  -->
+<input type="text" placeholder="Last Name" [(ngModel)]="lastName" />
+<p>Data: {{lastName}}</p>
+
+<br><br><br><br>
+
+

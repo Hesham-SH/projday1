@@ -1,0 +1,40 @@
+.loader{
+    position:relative;
+    margin: 100px;
+    width: 405px;
+    height: 405px;
+    background: linear-gradient(#14ffe9,#ffeb3b, #ff00e0);
+    animation: animate 1s linear infinite;
+    border-radius: 100%;
+    z-index:1;
+    filter :blur(25px)
+}
+@keyframes animate{
+
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+.imgDiv{
+    position:relative;
+    top:-500px;
+    left:105px;
+}
+
+img {
+    position:relative;
+    width:400px; 
+    height:400px; 
+    border-radius:100%;
+    z-index: 2;
+}
+
+.imgDiv-child{
+    margin: 50px;
+}

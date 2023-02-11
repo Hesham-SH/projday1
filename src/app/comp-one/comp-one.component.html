@@ -1,0 +1,21 @@
+<div style="width:120%;">
+<input type="text" value="{{data}}" (input)="showCharacters($event)"/>
+
+<p>Data : {{data}}</p>
+
+<button type="button" (click)="reset()">Remove Characters</button>
+<div class="loader"></div>
+
+<div class="imgDiv">
+    <img src="{{img}}"/>
+    <div class="imgDiv-child"></div>
+    <button type="button" (click)="nextItem()">Next</button>
+    <button type="button" (click)="previousItem()">Previous</button>
+    <button type="button" (click)="slideRun()">Run</button>
+    <button type="button" (click)="sliderStop()">Stop</button>
+</div>
+
+<!-- *******************************************   Day 2  ******************************************** -->
+
+<app-registration (publishData)="getData($event)"></app-registration>
+<app-students [dataFromCompOneParent]="dataFromRegistration"></app-students>

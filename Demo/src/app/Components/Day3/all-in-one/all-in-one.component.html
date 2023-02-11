@@ -1,0 +1,52 @@
+<h1>Registeration</h1>
+<div class="form">
+  <input type="text" placeholder="Name" [(ngModel)]="name"/>
+  <!-- <input *ngIf="+age<=30" style="border: 2px solid greenyellow;" type="text" placeholder="Age" [(ngModel)]="age"/>
+  <input *ngIf="+age>30" style="border: 2px solid red;" type="text" placeholder="Age" [(ngModel)]="age"/> -->
+  <!-- *ngClass="cond>?true:false" -->
+  <input type="text" placeholder="Age" [(ngModel)]="age"/>
+  <!-- <div style="color: red; text-align: center;" *ngIf="+age>30">
+    Age Must Be Less Than 30
+  </div>
+  <div style="color: greenyellow; text-align: center;" *ngIf="+age<=30&&age">
+    Age Valid
+  </div> -->
+
+  <div style="color: red; text-align: center;" *ngIf="+age>30 ; else trueBlock">
+    Age Must Be Less Than 30
+  </div>
+  <ng-template #trueBlock>
+    <div *ngIf="age ; else hamada" style="color: greenyellow; text-align: center;">
+      Age Valid
+    </div>
+
+  </ng-template>
+
+  <ng-template #hamada>
+    <div style="text-align: center;">
+      Please Enter Age
+    </div>
+  </ng-template>
+
+  <input type="button" value="ADD" (click)="GetData()" />
+</div>
+
+
+<h1>Students</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--Directive-->
+    <tr *ngFor="let s of students">
+      <td>{{s.name}}</td>
+      <td>{{s.age}}</td>
+      <!--Directive-->
+      <!-- <td *ngIf="+s.age<=30">{{s.age}}</td> -->
+    </tr>
+  </tbody>
+</table>
